@@ -6,6 +6,10 @@ jobs:
     name: Hello world action
     runs-on: ubuntu-latest
     steps:
+      - uses: azure/login@v1
+        with:
+          creds: ${{ secrets.TEST_LOGIN }}
+
       - uses: actions/checkout@v1
       - uses: ./action-a
         with:
